@@ -42,7 +42,7 @@ class _AddBookPageState extends State<AddBookPage> {
                 fit: BoxFit.fill,
               ),
               BlocConsumer<AddBookBloc, AddBookState>(
-                  bloc: BlocProvider.of<AddBookBloc>(context),
+                  cubit: BlocProvider.of<AddBookBloc>(context),
                   builder: (context, state) {
                     if (state.isCommitting)
                       return Center(child: CircularProgressIndicator());
@@ -51,9 +51,9 @@ class _AddBookPageState extends State<AddBookPage> {
                   },
                   listener: (context, state) {
                     if (state.errMessage.isNotEmpty) {
-                      Scaffold.of(context).showSnackBar(SnackBar(
-                        content: Text(state.errMessage.toString()),
-                      ));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(state.errMessage)),
+                      );
                     }
 
                     if (state.book != null) {

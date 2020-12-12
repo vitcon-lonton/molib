@@ -11,7 +11,7 @@ part 'addbook_state.dart';
 class AddBookBloc extends Bloc<AddBookEvent, AddBookState> {
   AddBookViewModel _viewModel;
 
-  AddBookBloc(this._viewModel);
+  AddBookBloc(this._viewModel) : super(AddBookState.initial());
 
   void addBook(
           {@required String title,
@@ -19,17 +19,12 @@ class AddBookBloc extends Bloc<AddBookEvent, AddBookState> {
           @required String isbn,
           @required String publishDate,
           @required String shelfId}) =>
-      add(
-        AddBookEvent.onAddBookRequested(
-            title: title,
-            author: author,
-            isbn: isbn,
-            publishDate: publishDate,
-            shelfId: shelfId),
-      );
-
-  @override
-  AddBookState get initialState => AddBookState.initial();
+      add(AddBookEvent.onAddBookRequested(
+          title: title,
+          author: author,
+          isbn: isbn,
+          publishDate: publishDate,
+          shelfId: shelfId));
 
   @override
   Stream<AddBookState> mapEventToState(

@@ -18,5 +18,11 @@
     ".flutter-plugins-dependencies": true,
     ".flutter-plugins": true
   },
-  "editor.fontSize": 20
+  "cSpell.words": [
+    "Sqflite",
+    "addbook",
+    "datasource",
+    "mockito",
+    "molib"
+  ]
 }

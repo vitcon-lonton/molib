@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:molib/domain/value_objects/Identity.dart';
@@ -44,7 +42,7 @@ void main() {
   });
 
   group('SqfliteDatasource.findBook', () {
-    test('should perform a database qurey and return a matching record',
+    test('should perform a database query and return a matching record',
         () async {
       //arrange
       when(database.query('books',

@@ -24,10 +24,7 @@ class BookRepository implements IBookRepository {
   }
 
   @override
-  delete({Identity bookId}) {
-    // TODO: implement delete
-    return null;
-  }
+  delete({Identity bookId}) => null;
 
   @override
   Future<Book> find({Identity bookId}) async {
@@ -40,8 +37,5 @@ class BookRepository implements IBookRepository {
   }
 
   @override
-  update(Book book) {
-    // TODO: implement update
-    return null;
-  }
+  update(Book book) => null;
 }

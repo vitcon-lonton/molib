@@ -13,10 +13,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
 
   void getBooksOnShelves() => add(HomePageEvent.onBookShelvesRequested());
 
-  HomePageBloc(this._viewModel);
-
-  @override
-  HomePageState get initialState => HomePageState.initial();
+  HomePageBloc(this._viewModel) : super(HomePageState.initial());
 
   @override
   Stream<HomePageState> mapEventToState(
